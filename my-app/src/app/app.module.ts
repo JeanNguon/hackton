@@ -1,3 +1,4 @@
+import { TimelineComponent } from './timeline/timeline.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PellmellComponent } from './pellmell/pellmell.component';
 import { AppRoutingModule } from './app.router.component';
@@ -19,7 +20,8 @@ import { FileUploadModule } from "ng2-file-upload";
     HeaderComponent,
     FooterComponent,
     PellmellComponent,
-    HomepageComponent 
+    HomepageComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

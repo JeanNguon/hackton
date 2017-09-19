@@ -1,3 +1,4 @@
+import { TimelineComponent } from './timeline/timeline.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from "./homepage/homepage.component";
@@ -33,6 +34,13 @@ const routes: Routes = [
         children: [
             { path: '', component: XlsxFileUploadComponent },
             { path: ':id', component: XlsxFileUploadComponent },
+        ]
+    },
+    {
+        path: 'timeline',
+        children: [
+            { path: '', component: TimelineComponent },
+            { path: ':id', component: TimelineComponent },
         ]
     }
 

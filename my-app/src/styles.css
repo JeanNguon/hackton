@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-.footer{
-    bottom: 0;
-    height: 100%;
-    position: fixed;
+#footer{
+    margin-top: 4%;
+    bottom: 0 !important;
+    position: fixed !important;
+    width: 100%;
 }
+
+
+.rotation{
+    display: inline-block;
+    white-space: nowrap;
+
+    transform: translate(0,100%) rotate(-90deg);
+    transform-origin: 0 0;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+}
+
