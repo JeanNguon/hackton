@@ -1,8 +1,10 @@
+import { IWorkSheet } from 'xlsx';
+import { IWorkBook } from 'ts-xlsx';
+import { read } from 'ts-xlsx';
+
 import { FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { ChangeDetectionStrategy, Output, EventEmitter, Component, OnDestroy, OnInit } from '@angular/core';
 
-import { read, IWorkBook } from "ts-xlsx";
-import { IWorkSheet } from "xlsx";
 import { Observable, Subject, Subscription } from "rxjs";
 
 const URL = 'http://localhost:4200/';

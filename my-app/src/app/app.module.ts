@@ -1,3 +1,8 @@
+import { HomepageComponent } from './homepage/homepage.component';
+import { PellmellComponent } from './pellmell/pellmell.component';
+import { AppRoutingModule } from './app.router.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 import { ChartComponent } from './charts/chart.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,12 +15,16 @@ import { FileUploadModule } from "ng2-file-upload";
   declarations: [
     AppComponent,
     XlsxFileUploadComponent,
-    ChartComponent
+    ChartComponent,
+    HeaderComponent,
+    FooterComponent,
+    PellmellComponent,
+    HomepageComponent 
   ],
   imports: [
     BrowserModule,
     FileUploadModule,
-    
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
