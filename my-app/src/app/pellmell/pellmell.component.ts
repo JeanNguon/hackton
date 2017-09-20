@@ -55,7 +55,7 @@ export class PellmellComponent implements OnInit {
         { nom: " lecture ", nombre: "    135 ", categorie: "Littérature" },
     ];
     ngOnInit(): void {
-        this.list = this.pellMell;
+        this.list = this.shuffle( this.pellMell);
 
     }
 
@@ -87,6 +87,26 @@ export class PellmellComponent implements OnInit {
     getSize(pellMell: PellMell){
         let number = +pellMell.nombre;
         return number/250;
+    }
+
+    shuffle(array) {
+        let counter = array.length;
+    
+        // While there are elements in the array
+        while (counter > 0) {
+            // Pick a random index
+            let index = Math.floor(Math.random() * counter);
+    
+            // Decrease counter by 1
+            counter--;
+    
+            // And swap the last element with it
+            let temp = array[counter];
+            array[counter] = array[index];
+            array[index] = temp;
+        }
+    
+        return array;
     }
 
 }
