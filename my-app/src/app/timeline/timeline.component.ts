@@ -3,42 +3,48 @@ import * as c3 from "c3";
 
 @Component({
     selector: 'app-timeline',
-    templateUrl: 'timeline.component.html'
+    templateUrl: 'timeline.component.html',
+    styleUrls: ['./timeline.component.css']
 })
 export class TimelineComponent implements OnInit {
     chart;
-    
+
     ngOnInit(): void {
-        this.chart = c3.generate({
-            data: {
-                x: 'x',
-        //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
-                columns: [
-                    ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
-        //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-                    ['data1', 30, 200, 100, 400, 150, 250],
-                    ['data2', 130, 340, 200, 500, 250, 350]
-                ]
-            },
-            axis: {
-                x: {
-                    type: 'timeseries',
-                    tick: {
-                        format: '%Y-%m-%d'
+        (function () {
+
+            'use strict';
+
+            // define variables
+            var items = document.querySelectorAll(".timeline li");
+
+            // check if an element is in viewport
+            // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function callbackFunc() {
+                for (var i = 0; i < items.length; i++) {
+                    if (isElementInViewport(items[i])) {
+                        items[i].classList.add("in-view");
                     }
                 }
             }
-        });
-        
-        setTimeout(function () {
-            this.chart.load({
-                columns: [
-                    ['data3', 400, 500, 450, 700, 600, 500]
-                ]
-            });
-        }, 1000);
+
+            // listen for events
+            window.addEventListener("load", callbackFunc);
+            window.addEventListener("resize", callbackFunc);
+            window.addEventListener("scroll", callbackFunc);
+
+        })();
     }
 
-   
-    
+
+
 }
