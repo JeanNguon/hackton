@@ -104,7 +104,7 @@ export class ChartComponent {
                 //    width: 39 // for adjusting arc thickness
             },
             color: {
-                pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+                pattern: ['#10DB00', '#10DB00', '#10DB00', '#10DB00'], // the three color levels for the percentage values.
                 threshold: {
                     //            unit: 'value', // percentage is default
                     //            max: 200, // 100 is default
@@ -141,7 +141,7 @@ export class ChartComponent {
                 //    width: 39 // for adjusting arc thickness
             },
             color: {
-                pattern: ['#F97600', '#F97600', '#F97600', '#F97600'], // the three color levels for the percentage values.
+                pattern: ['#00C474', '#00C474', '#00C474', '#00C474'], // the three color levels for the percentage values.
                 threshold: {
                     //            unit: 'value', // percentage is default
                     //            max: 200, // 100 is default
