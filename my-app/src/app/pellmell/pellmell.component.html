@@ -1,6 +1,7 @@
 <div id="pellmell"class="ui grid">
     <div *ngFor="let mot of list">
         <p [ngClass]="getCategorie(mot)" [style.width.px]=mot [style.font-size.em]=getSize(mot)>{{mot.nom}}</p>
+
     </div>
     <!-- <img src="../../assets/tentacule.png " alt="tentacules"> -->
 </div>

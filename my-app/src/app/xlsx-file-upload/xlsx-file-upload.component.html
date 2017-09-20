@@ -1,6 +1,10 @@
-<h3>Import de fichier</h3>
+<div class="xlsx-img-background"></div>
+<div class="page-margin">
+    <h1 class="title-import">Import de fichier</h1>
+    <div class="ui inverted section divider"></div>
 
-<div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)" [uploader]="uploader"
-    (onFileDrop)="fileDropped($event)" class="well my-drop-zone">
-    <ng-content></ng-content>
+    <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)" [uploader]="uploader"
+        (onFileDrop)="fileDropped($event)" class="well my-drop-zone">
+        <ng-content></ng-content>
+    </div>
 </div>
