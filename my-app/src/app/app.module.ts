@@ -1,3 +1,4 @@
+import { WordComponent } from './pellmell/word.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PellmellComponent } from './pellmell/pellmell.component';
@@ -21,7 +22,8 @@ import { FileUploadModule } from "ng2-file-upload";
     FooterComponent,
     PellmellComponent,
     HomepageComponent,
-    TimelineComponent
+    TimelineComponent,
+    WordComponent
   ],
   imports: [
     BrowserModule,

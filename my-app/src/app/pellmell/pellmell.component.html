@@ -1,35 +1,6 @@
- Example
-<div class="ui grid">
-    <div class="three column row">
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
+<div id="pellmell"class="ui grid">
+    <div *ngFor="let mot of list">
+        <p [ngClass]="getCategorie(mot)" [style.width.px]=mot [style.font-size.em]=getSize(mot)>{{mot.nom}}</p>
     </div>
-    <div class="eight column row">
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-    </div>
-</div>
-<div class="ui relaxed grid">
-    <div class="three column row">
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-    </div>
-    <div class="eight column row">
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-    </div>
+    <!-- <img src="../../assets/tentacule.png " alt="tentacules"> -->
 </div>
