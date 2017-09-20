@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'chart',
-    templateUrl: 'chart.component.html'
+    templateUrl: 'chart.component.html',
+    styleUrls: ['chart.component.css']
 })
 export class ChartComponent {
     ngOnInit() {
@@ -76,7 +77,7 @@ export class ChartComponent {
         let gauge = c3.generate({
             data: {
                 columns: [
-                    ['data', 91.4]
+                    ['data', 43.98765082 ]
                 ],
                 type: 'gauge',
                 onclick: function (d, i) { console.log("onclick", d, i); },
