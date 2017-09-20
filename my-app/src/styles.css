@@ -31,7 +31,7 @@
 
 .img-left {
     position: absolute;
-    bottom: 79px;
+    bottom: 114px;
 }
 
 .img-right {
@@ -90,39 +90,33 @@
     height: 210px;
     position: relative;
 }
+.test {
+    display: inline-block;
+    float: right;
+}
 
 .link-rouage-1{
-    width:100%;
+    width:20%;
+    float: right;
 }
 .link-rouage-2{
-    width: 100%;
+    width: 20%;
+    float: right;
 }
 .link-rouage-3{
+    width: 20%;
+    float: right;
+}
+.link-rouage-1 img{
+    width:100%;
+}
+.link-rouage-2 img{
+    width: 100%;
+}
+.link-rouage-3 img{
     width: 100%;
 }
 
-.link-rouage-1 p {
-    position: absolute;
-    top: 40px;
-    width: 100%;
-    color: #ffffff;
-    font-size: 30px;
-    text-align: center;
-}
-.link-rouage-2 p {
-    transform: rotate(-22deg);
-    position: absolute;
-    top: 81px;
-    width: 100%;
-    color: #ffffff;
-    font-size: 30px;
-    text-align: center;
-}
-.link-rouage-3 p {
-    position: absolute;
-    top: 82px;
-    width: 100%;
-    color: #ffffff;
-    font-size: 30px;
-    text-align: center;
+.footer-img {
+
 }
