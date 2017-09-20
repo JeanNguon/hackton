@@ -4,19 +4,44 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'chart',
-    templateUrl: 'chart.component.html'
+    templateUrl: 'chart.component.html',
+    styleUrls: ['chart.component.css']
 })
 export class ChartComponent {
     ngOnInit() {
         let chart = c3.generate({
             bindto: '#chart1',
             data: {
+                x: 'x',
                 columns: [
-                    ['data1', 30],
-                    ['data2', 120],
+                    ['x', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017'],
+                    [
+                        "nombre d'alertes par an",
+                        "1001",
+                        "1905",
+                        "2216",
+                        "3023",
+                        "3342",
+                        "4090",
+                        "4075",
+                        "5295",
+                        "3956",
+                        "4788",
+                        "1971",
+                    ]
                 ]
             }
         });
+
+
+        setTimeout(function () {
+            chart.unload({
+                ids: 'data1'
+            });
+            chart.unload({
+                ids: 'data2'
+            });
+        }, 2500);
         // ----------------------donuts------------------------------------------------------
         let donuts = c3.generate({
             data: {
@@ -54,29 +79,12 @@ export class ChartComponent {
             }
         });
 
-        setTimeout(function () {
-            chart.load({
-                columns: [
-                    ["setosa", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
-                    ["versicolor", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3],
-                    ["virginica", 2.5, 1.9, 2.1, 1.8, 2.2, 2.1, 1.7, 1.8, 1.8, 2.5, 2.0, 1.9, 2.1, 2.0, 2.4, 2.3, 1.8, 2.2, 2.3, 1.5, 2.3, 2.0, 2.0, 1.8, 2.1, 1.8, 1.8, 1.8, 2.1, 1.6, 1.9, 2.0, 2.2, 1.5, 1.4, 2.3, 2.4, 1.8, 1.8, 2.1, 2.4, 2.3, 1.9, 2.3, 2.5, 2.3, 1.9, 2.0, 2.3, 1.8],
-                ]
-            });
-        }, 1500);
 
-        setTimeout(function () {
-            chart.unload({
-                ids: 'data1'
-            });
-            chart.unload({
-                ids: 'data2'
-            });
-        }, 2500);
         //----------------------------------------------------------------------------------------
         let gauge = c3.generate({
             data: {
                 columns: [
-                    ['data', 91.4]
+                    ['data', 43.98765082]
                 ],
                 type: 'gauge',
                 onclick: function (d, i) { console.log("onclick", d, i); },
@@ -108,6 +116,46 @@ export class ChartComponent {
             },
             bindto: '#chart3',
         });
-    }
 
+        //----------------------------------------------------------------------------------------
+        let gauge2 = c3.generate({
+            data: {
+                columns: [
+                    ['data', 42.6]
+                ],
+                type: 'gauge',
+                onclick: function (d, i) { console.log("onclick", d, i); },
+                onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+            },
+            gauge: {
+                //        label: {
+                //            format: function(value, ratio) {
+                //                return value;
+                //            },
+                //            show: false // to turn off the min/max labels.
+                //        },
+                //    min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
+                //    max: 100, // 100 is default
+                //    units: ' %',
+                //    width: 39 // for adjusting arc thickness
+            },
+            color: {
+                pattern: ['#F97600', '#F97600', '#F97600', '#F97600'], // the three color levels for the percentage values.
+                threshold: {
+                    //            unit: 'value', // percentage is default
+                    //            max: 200, // 100 is default
+                    values: [30, 60, 90, 100]
+                }
+            },
+            size: {
+                height: 180
+            },
+            bindto: '#chart4',
+        });
+    }
 }
+
+    
+
+
